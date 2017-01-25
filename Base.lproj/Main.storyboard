@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nM9-Sp-lv7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Date Picker View Controller-->
         <scene sceneID="ohl-R8-Sm2">
             <objects>
-                <viewController id="nM9-Sp-lv7" sceneMemberID="viewController">
+                <viewController id="nM9-Sp-lv7" customClass="DatePickerViewController" customModule="Calendar_Demo_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HRH-0S-Q84"/>
                         <viewControllerLayoutGuide type="bottom" id="uSN-km-GFM"/>
@@ -23,11 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Usz-PI-hEv">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Usz-PI-hEv">
                                 <rect key="frame" x="19" y="234" width="338" height="200"/>
                                 <date key="date" timeIntervalSinceReferenceDate="507001530.82989103">
                                     <!--2017-01-25 01:45:30 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerChangeDidEnd:" destination="nM9-Sp-lv7" eventType="editingDidEnd" id="8rS-ju-a5p"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a date!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-YS-qEa">
                                 <rect key="frame" x="130" y="156.5" width="115.5" height="21"/>
@@ -35,6 +38,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUq-Ta-pan">
+                                <rect key="frame" x="165" y="481" width="46" height="30"/>
+                                <state key="normal" title="Go!"/>
+                                <connections>
+                                    <action selector="goButtonTapped:" destination="nM9-Sp-lv7" eventType="touchUpInside" id="XNx-QH-65O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -43,13 +53,18 @@
                             <constraint firstItem="Usz-PI-hEv" firstAttribute="height" secondItem="rIF-IH-ex1" secondAttribute="height" multiplier="0.3" id="eKd-cF-dY1"/>
                             <constraint firstItem="Usz-PI-hEv" firstAttribute="width" secondItem="rIF-IH-ex1" secondAttribute="width" multiplier="0.9" id="iGq-ac-rGZ"/>
                             <constraint firstItem="hbq-YS-qEa" firstAttribute="centerY" secondItem="rIF-IH-ex1" secondAttribute="centerY" multiplier="0.5" id="kz3-UN-T0l"/>
+                            <constraint firstItem="QUq-Ta-pan" firstAttribute="centerY" secondItem="rIF-IH-ex1" secondAttribute="centerY" multiplier="1.5" id="mWc-M2-m6O"/>
+                            <constraint firstItem="QUq-Ta-pan" firstAttribute="centerX" secondItem="rIF-IH-ex1" secondAttribute="centerX" id="sgc-Pr-B0E"/>
                             <constraint firstItem="Usz-PI-hEv" firstAttribute="centerX" secondItem="rIF-IH-ex1" secondAttribute="centerX" id="sp1-H6-E8u"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Usz-PI-hEv" id="za0-i6-IKa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nx-v8-xuq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-759.20000000000005" y="35.532233883058474"/>
+            <point key="canvasLocation" x="-1076" y="36"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

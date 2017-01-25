@@ -9,14 +9,45 @@
 import UIKit
 
 class DatePickerViewController: UIViewController {
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let date = Date()
+        datePicker.maximumDate = date
+        datePicker.minimumDate = startDateSetUp()
     }
 
+//    MARK: - Date Picker Delegate
 
-//     MARK: - Navigation
+    func startDateSetUp() -> Date {
+        let calendar = Calendar.current
+        var components: DateComponents = DateComponents()
+        
+        components.year = 2012
+        components.month = 8
+        components.day = 6
+        components.hour = 1
+        components.minute = 32
+        components.second = 0
+
+        let startDate: Date = calendar.date(from: components)!
+        return (startDate)
+    }
+    
+    @IBAction func datePickerChangeDidEnd(_ sender: UIDatePicker) {
+        //        Assign the date to a new variable to be passed to the calendar VC
+        
+    }
+    
+//    MARK: - Navigation
+    
+    @IBAction func goButtonTapped(_ sender: UIButton) {
+     //Collect Date and pass it to the calendar
+        
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
