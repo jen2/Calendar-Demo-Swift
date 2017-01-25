@@ -29,7 +29,7 @@
                                     <!--2017-01-25 01:45:30 +0000-->
                                 </date>
                                 <connections>
-                                    <action selector="datePickerChangeDidEnd:" destination="nM9-Sp-lv7" eventType="editingDidEnd" id="8rS-ju-a5p"/>
+                                    <action selector="datePickerValueChanged:" destination="nM9-Sp-lv7" eventType="valueChanged" id="tau-by-ne3"/>
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a date!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-YS-qEa">

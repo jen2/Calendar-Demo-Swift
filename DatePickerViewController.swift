@@ -39,10 +39,10 @@ class DatePickerViewController: UIViewController {
         return (startDate)
     }
     
-    @IBAction func datePickerChangeDidEnd(_ sender: UIDatePicker) {
+    @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         selectedDate = datePicker.date
-        
     }
+    
     
 //    MARK: - Navigation
     
