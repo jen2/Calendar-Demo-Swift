@@ -1,23 +1,20 @@
 //
-//  ViewController.swift
+//  CalViewController.swift
 //  Calendar-Demo-Swift
 //
-//  Created by Jennifer A Sipila on 1/24/17.
+//  Created by Jennifer A Sipila on 1/25/17.
 //  Copyright © 2017 Jennifer A Sipila. All rights reserved.
 //
 
 import UIKit
 import JTAppleCalendar
 
-
-//TO DO: Transition to Next or Previous Month if month selected is not .thisMonth.
-
-class ViewController: UIViewController {
+class CalViewController: UIViewController {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    
     @IBOutlet weak var selectedDate: UILabel!
     
+    var dateFromPicker: Date = Date()
     let white = UIColor(colorWithHexValue: 0xECEAED)
     let darkPurple = UIColor(colorWithHexValue: 0x3A284C)
     let dimPurple = UIColor(colorWithHexValue: 0x574865)
@@ -31,13 +28,13 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
+extension CalViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
         let startDate = formatter.date(from: "2016 02 01")! // You can use date generated from a formatter
-        let endDate = Date()                                // You can also use dates created from this 
+        let endDate = Date()                                // You can also use dates created from this
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: 6, // Only 1, 2, 3, & 6 are allowed
@@ -97,7 +94,7 @@ extension ViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDele
             myCustomCell.selectedView.isHidden = true
         }
     }
-
+    
 }
 
 extension UIColor {

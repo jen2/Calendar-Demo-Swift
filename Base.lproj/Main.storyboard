@@ -33,16 +33,17 @@
                                 </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a date!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-YS-qEa">
-                                <rect key="frame" x="130" y="156.5" width="115.5" height="21"/>
+                                <rect key="frame" x="130" y="157" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUq-Ta-pan">
-                                <rect key="frame" x="165" y="481" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUq-Ta-pan">
+                                <rect key="frame" x="173" y="485.5" width="30" height="30"/>
                                 <state key="normal" title="Go!"/>
                                 <connections>
                                     <action selector="goButtonTapped:" destination="nM9-Sp-lv7" eventType="touchUpInside" id="XNx-QH-65O"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showDate" id="hUx-Me-XBR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="-1076" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--Cal View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calendar_Demo_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalViewController" customModule="Calendar_Demo_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -110,7 +111,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calendarView" destination="PKp-OC-qM1" id="cfV-Wn-dKc"/>
+                        <outlet property="calendarView" destination="PKp-OC-qM1" id="CAM-wT-e4n"/>
                         <outlet property="selectedDate" destination="cy4-us-1vo" id="ZIa-wk-hSG"/>
                     </connections>
                 </viewController>

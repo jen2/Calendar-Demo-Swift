@@ -8,10 +8,13 @@
 
 import UIKit
 
+
 class DatePickerViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
 
+    var selectedDate: Date = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,19 +41,21 @@ class DatePickerViewController: UIViewController {
     }
     
     @IBAction func datePickerChangeDidEnd(_ sender: UIDatePicker) {
-        //        Assign the date to a new variable to be passed to the calendar VC
+        selectedDate = datePicker.date
         
     }
     
 //    MARK: - Navigation
     
     @IBAction func goButtonTapped(_ sender: UIButton) {
-     //Collect Date and pass it to the calendar
+        performSegue(withIdentifier: "showDate", sender: self)
         
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+//        if let destinationVC = segue.destinationViewController as? CalViewController {
+//            destinationVC.dateFromPicker = selectedDate
+//        }
     }
 
 
