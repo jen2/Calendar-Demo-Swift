@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CellView" customModule="Calendar_Demo_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="253"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GD1-8a-o9a" userLabel="Selected View">
+                    <rect key="frame" x="15" y="12.5" width="270" height="228"/>
+                    <color key="backgroundColor" red="0.88064718249999996" green="0.69137564959999998" blue="0.32457194480000001" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZM1-lO-2sC">
+                    <rect key="frame" x="129" y="53" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PhotoNum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tC-Wm-7w5" userLabel="Photo Number">
+                    <rect key="frame" x="110" y="116.5" width="81.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.22745098039215686" green="0.15686274509803921" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZM1-lO-2sC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Fo7-P1-nyB"/>
+                <constraint firstItem="GD1-8a-o9a" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.9" id="JHo-cn-KyF"/>
+                <constraint firstItem="GD1-8a-o9a" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.9" id="Ptx-o1-CsR"/>
+                <constraint firstItem="7tC-Wm-7w5" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Sy4-Bd-2D5"/>
+                <constraint firstItem="7tC-Wm-7w5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gwH-TO-4NN"/>
+                <constraint firstItem="GD1-8a-o9a" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="p2C-Tp-p3t"/>
+                <constraint firstItem="GD1-8a-o9a" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="pw1-dh-RaT"/>
+                <constraint firstItem="ZM1-lO-2sC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.5" id="sPD-cX-LER"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dateLabel" destination="ZM1-lO-2sC" id="7OK-5H-67X"/>
+                <outlet property="photoNumberLabel" destination="7tC-Wm-7w5" id="cns-bB-rdi"/>
+                <outlet property="selectedView" destination="GD1-8a-o9a" id="X5j-6D-if2"/>
+            </connections>
+            <point key="canvasLocation" x="-12" y="-155.5"/>
+        </view>
+    </objects>
+</document>
