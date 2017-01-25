@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class DatePickerViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -49,14 +48,12 @@ class DatePickerViewController: UIViewController {
     
     @IBAction func goButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "showDate", sender: self)
-        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destinationVC = segue.destinationViewController as? CalViewController {
-//            destinationVC.dateFromPicker = selectedDate
-//        }
+        if let destinationVC = segue.destination as? CalViewController {
+            destinationVC.dateFromPicker = selectedDate
+        }
     }
-
 
 }

@@ -9,12 +9,17 @@
 import UIKit
 import JTAppleCalendar
 
+
+//TO DO: Make sure dateFromPicker is getting correct date
+
 class CalViewController: UIViewController {
 
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var selectedDate: UILabel!
     
     var dateFromPicker: Date = Date()
+    var passedDateComponents: DateComponents = DateComponents()
+    
     let white = UIColor(colorWithHexValue: 0xECEAED)
     let darkPurple = UIColor(colorWithHexValue: 0x3A284C)
     let dimPurple = UIColor(colorWithHexValue: 0x574865)
@@ -25,6 +30,15 @@ class CalViewController: UIViewController {
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CellView") // Registering your cell is manditory
         calendarView.cellInset = CGPoint(x: 0, y: 0)  //Use this to change to space between cells.
+        
+        //Pre-select dates
+        self.calendarView.selectDates([dateFromPicker])
+        calendarView.scrollToDate(dateFromPicker)
+    }
+    
+    func getComponentsFromPassedDate() {
+        let unitFlags: Set<Calendar.Component> = [.second, .minute, .hour, .day, .month, .year]
+        self.passedDateComponents = NSCalendar.current.dateComponents(unitFlags, from: dateFromPicker)
     }
 }
 
@@ -94,7 +108,6 @@ extension CalViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
             myCustomCell.selectedView.isHidden = true
         }
     }
-    
 }
 
 extension UIColor {
