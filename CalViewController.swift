@@ -34,11 +34,16 @@ class CalViewController: UIViewController {
         //Pre-select dates
         self.calendarView.selectDates([dateFromPicker])
         calendarView.scrollToDate(dateFromPicker)
+        // Set label to "month year"
+        selectedDate.text = formatDateForLabel(inputDate: dateFromPicker)
     }
     
-    func getComponentsFromPassedDate() {
-        let unitFlags: Set<Calendar.Component> = [.second, .minute, .hour, .day, .month, .year]
-        self.passedDateComponents = NSCalendar.current.dateComponents(unitFlags, from: dateFromPicker)
+
+    func formatDateForLabel(inputDate: Date) -> String {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM yyyy"
+        dateFormatter.timeZone = NSTimeZone.local
+        return dateFormatter.string(from: inputDate)
     }
 }
 
@@ -47,7 +52,7 @@ extension CalViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewD
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
-        let startDate = formatter.date(from: "2016 02 01")! // You can use date generated from a formatter
+        let startDate = formatter.date(from: "2012 08 06")! // You can use date generated from a formatter
         let endDate = Date()                                // You can also use dates created from this
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
